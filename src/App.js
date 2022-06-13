@@ -1,15 +1,17 @@
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
+import React, { useEffect, useState } from "react";
+// import ReactDOM from "react-dom";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  const [count, setCount] = useState([3, 4, 5, 6, 7, 8, 9, 1, 2]);
+  // useEffect(() => {
+  //   console.log(count);
+  // }, [count]);
   function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-      // Generate random number
-      var j = Math.floor(Math.random() * (i + 1));
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
 
-      var temp = array[i];
+      let temp = array[i];
       array[i] = array[j];
       array[j] = temp;
     }
@@ -17,21 +19,27 @@ function App() {
     return array;
   }
   function shortArray() {
+    console.log("sort");
     let newArr = [...count];
     newArr.sort((a, b) => (a < b ? -1 : 1));
     setCount(newArr);
   }
 
   const shuffleBoxes = () => {
-    setCount(shuffleArray(count));
+    console.log("shu");
+    let newArr = shuffleArray(count);
+    setCount([...newArr]);
+    console.log(count);
   };
   return (
     <div>
       <h1> Shuffle and Sort</h1>
       <div className="dashboard">
         <div className="wrapper">
-          {count.map((ele) => (
-            <div className="items">{ele}</div>
+          {count.map((ele, key) => (
+            <div className="items" id={`item-${key}`} key={key}>
+              {ele}
+            </div>
           ))}
         </div>
         <div className="btn-wrapper">
