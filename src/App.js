@@ -32,7 +32,7 @@ function App() {
     console.log(count);
   };
   return (
-    <div>
+    <div className="main">
       <h1> Shuffle and Sort</h1>
       <div className="dashboard">
         <div className="wrapper">

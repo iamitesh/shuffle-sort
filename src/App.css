@@ -8,7 +8,9 @@
   flex-wrap: wrap;
   background-color: #EFEFEF;
 }
-
+.main{
+      background-color: #51f8b8;
+}
 
 
 h1 {
@@ -19,7 +21,6 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background-color: #51f8b8;
   margin: 20px 0px;
 }
 
