@@ -1,7 +1,7 @@
 .wrapper {
   padding: 20px;
-  height: 900px;
-  width: 900px;
+  height: 600px;
+  width: 600px;
   display: flex;
   justify-content: space-between;
   align-items: space-around;
